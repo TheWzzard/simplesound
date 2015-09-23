@@ -16,7 +16,8 @@ audio_sound_gain(this,global.gain_master_sfx,0);
 //wobble
 var range = argument[4]*(1/12);//this will take the semi-tone input and convert it
 var wobble = random_range(1 - range, 1 + range);
-range += argument[3]*(1/12);
+wobble += argument[3]*(1/12);
+wobble = 1 + wobble;
 //shift the pitch
 audio_sound_pitch(this,wobble);
 return this;
